@@ -1,0 +1,34 @@
+/* Header */
+
+#header {
+  padding: 1em;
+  background-color: #9fd9f9;
+}
+
+#link {
+  padding: 0.5em;
+}
+
+/* Footer */
+
+#footer {
+  padding: 1em;
+  background-color: #9fd9f9;
+}
+
+/* Content */
+
+#content1 {
+  padding: 1em;
+  background-color: #286e95;
+}
+
+#content2 {
+  padding: 1em;
+  background-color: #388cbb;
+}
+
+#content3 {
+  padding: 1em;
+  background-color: #49aee6;
+}

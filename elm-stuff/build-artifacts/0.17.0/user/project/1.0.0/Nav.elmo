@@ -1,0 +1,137 @@
+var _user$project$Nav$pageContent = function (model) {
+	var _p0 = model.page;
+	switch (_p0.ctor) {
+		case 'WelcomePage':
+			return _user$project$Page_Welcome_View$content;
+		case 'AboutPage':
+			return _user$project$Page_About_View$content;
+		default:
+			return _user$project$Page_Contact_View$content;
+	}
+};
+var _user$project$Nav$subscriptions = function (model) {
+	return _elm_lang$core$Platform_Sub$none;
+};
+var _user$project$Nav$update = F2(
+	function (msg, model) {
+		var _p1 = msg;
+		return A2(
+			_elm_lang$core$Platform_Cmd_ops['!'],
+			model,
+			_elm_lang$core$Native_List.fromArray(
+				[]));
+	});
+var _user$project$Nav$toHash = function (page) {
+	var _p2 = page;
+	switch (_p2.ctor) {
+		case 'WelcomePage':
+			return '#welcome';
+		case 'AboutPage':
+			return '#about';
+		default:
+			return '#contact';
+	}
+};
+var _user$project$Nav$urlUpdate = F2(
+	function (result, model) {
+		var _p3 = result;
+		if (_p3.ctor === 'Ok') {
+			return A2(
+				_elm_lang$core$Platform_Cmd_ops['!'],
+				_elm_lang$core$Native_Utils.update(
+					model,
+					{page: _p3._0}),
+				_elm_lang$core$Native_List.fromArray(
+					[]));
+		} else {
+			return {
+				ctor: '_Tuple2',
+				_0: model,
+				_1: _elm_lang$navigation$Navigation$modifyUrl(
+					_user$project$Nav$toHash(model.page))
+			};
+		}
+	});
+var _user$project$Nav$link = F2(
+	function (page, navLinkName) {
+		return A2(
+			_elm_lang$html$Html$a,
+			_elm_lang$core$Native_List.fromArray(
+				[
+					_elm_lang$html$Html_Attributes$id('link'),
+					_elm_lang$html$Html_Attributes$href(
+					_user$project$Nav$toHash(page))
+				]),
+			_elm_lang$core$Native_List.fromArray(
+				[
+					_elm_lang$html$Html$text(navLinkName)
+				]));
+	});
+var _user$project$Nav$Model = function (a) {
+	return {page: a};
+};
+var _user$project$Nav$ContactPage = {ctor: 'ContactPage'};
+var _user$project$Nav$AboutPage = {ctor: 'AboutPage'};
+var _user$project$Nav$WelcomePage = {ctor: 'WelcomePage'};
+var _user$project$Nav$pageParser = _evancz$url_parser$UrlParser$oneOf(
+	_elm_lang$core$Native_List.fromArray(
+		[
+			A2(
+			_evancz$url_parser$UrlParser$format,
+			_user$project$Nav$WelcomePage,
+			_evancz$url_parser$UrlParser$s('welcome')),
+			A2(
+			_evancz$url_parser$UrlParser$format,
+			_user$project$Nav$AboutPage,
+			_evancz$url_parser$UrlParser$s('about')),
+			A2(
+			_evancz$url_parser$UrlParser$format,
+			_user$project$Nav$ContactPage,
+			_evancz$url_parser$UrlParser$s('contact'))
+		]));
+var _user$project$Nav$hashParser = function (location) {
+	return A3(
+		_evancz$url_parser$UrlParser$parse,
+		_elm_lang$core$Basics$identity,
+		_user$project$Nav$pageParser,
+		A2(_elm_lang$core$String$dropLeft, 1, location.hash));
+};
+var _user$project$Nav$init = function (result) {
+	return A2(
+		_user$project$Nav$urlUpdate,
+		result,
+		_user$project$Nav$Model(_user$project$Nav$WelcomePage));
+};
+var _user$project$Nav$view = function (model) {
+	return A2(
+		_elm_lang$html$Html$div,
+		_elm_lang$core$Native_List.fromArray(
+			[]),
+		_elm_lang$core$Native_List.fromArray(
+			[
+				A2(
+				_elm_lang$html$Html$div,
+				_elm_lang$core$Native_List.fromArray(
+					[
+						_elm_lang$html$Html_Attributes$id('header')
+					]),
+				_elm_lang$core$Native_List.fromArray(
+					[
+						A2(_user$project$Nav$link, _user$project$Nav$WelcomePage, 'Welcome'),
+						A2(_user$project$Nav$link, _user$project$Nav$AboutPage, 'About'),
+						A2(_user$project$Nav$link, _user$project$Nav$ContactPage, 'Contact')
+					])),
+				A2(
+				_elm_lang$html$Html$div,
+				_elm_lang$core$Native_List.fromArray(
+					[]),
+				_user$project$Nav$pageContent(model)),
+				A2(
+				_elm_lang$html$Html$div,
+				_elm_lang$core$Native_List.fromArray(
+					[]),
+				_elm_lang$core$Native_List.fromArray(
+					[_user$project$Component_Footer$footer]))
+			]));
+};
+var _user$project$Nav$NoOp = {ctor: 'NoOp'};

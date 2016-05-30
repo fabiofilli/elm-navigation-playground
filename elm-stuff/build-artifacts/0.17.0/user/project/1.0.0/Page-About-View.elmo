@@ -1,0 +1,32 @@
+var _user$project$Page_About_View$sectionC = A2(
+	_elm_lang$html$Html$div,
+	_elm_lang$core$Native_List.fromArray(
+		[
+			_elm_lang$html$Html_Attributes$id('content3')
+		]),
+	_elm_lang$core$Native_List.fromArray(
+		[
+			_elm_lang$html$Html$text('About Content3')
+		]));
+var _user$project$Page_About_View$sectionB = A2(
+	_elm_lang$html$Html$div,
+	_elm_lang$core$Native_List.fromArray(
+		[
+			_elm_lang$html$Html_Attributes$id('content2')
+		]),
+	_elm_lang$core$Native_List.fromArray(
+		[
+			_elm_lang$html$Html$text('About Content2')
+		]));
+var _user$project$Page_About_View$sectionA = A2(
+	_elm_lang$html$Html$div,
+	_elm_lang$core$Native_List.fromArray(
+		[
+			_elm_lang$html$Html_Attributes$id('content1')
+		]),
+	_elm_lang$core$Native_List.fromArray(
+		[
+			_elm_lang$html$Html$text('About Content1')
+		]));
+var _user$project$Page_About_View$content = _elm_lang$core$Native_List.fromArray(
+	[_user$project$Page_About_View$sectionA, _user$project$Page_About_View$sectionB, _user$project$Page_About_View$sectionC]);
