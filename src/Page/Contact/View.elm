@@ -9,7 +9,7 @@ content =
   , sectionB
   , sectionC
   ]
-  
+
 
 -- Section A
 
@@ -22,8 +22,10 @@ sectionA =
 -- Section B
 
 
+sectionB : Html msg
 sectionB =
   div [ id "content2" ] [ text "Contact Content2"]
+
 
 -- Section C
 

@@ -22,8 +22,10 @@ sectionA =
 -- Section B
 
 
+sectionB : Html msg
 sectionB =
   div [ id "content2" ] [ text "Welcome Content2"]
+
 
 -- Section C
 
